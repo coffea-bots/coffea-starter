@@ -1,0 +1,51 @@
+{
+  "name": "coffea-starter",
+  "version": "0.0.0",
+  "description": "coffea starter kit / boilerplate to quickly develop a chat bot",
+  "bin": {
+    "bot": "build/index.js"
+  },
+  "scripts": {
+    "start": "npm run start:prod",
+    "start:dev": "babel-node src/index.js",
+    "start:prod": "npm run prepublish && node build/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "clean": "rimraf build",
+    "compile": "babel --presets es2015 -d build/ src/",
+    "prepublish": "npm run clean && npm run compile"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/caffeinery/coffea-starter.git"
+  },
+  "keywords": [
+    "coffea",
+    "starter",
+    "kit",
+    "boilerplate",
+    "chat",
+    "bot",
+    "messaging",
+    "slack",
+    "irc",
+    "telegram"
+  ],
+  "author": "Daniel Bugl <me@omnidan.net>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/caffeinery/coffea-starter/issues"
+  },
+  "homepage": "https://github.com/caffeinery/coffea-starter#readme",
+  "devDependencies": {
+    "babel-core": "^6.5.1",
+    "babel-eslint": "^4.1.8",
+    "babel-plugin-transform-object-rest-spread": "^6.5.0",
+    "babel-preset-es2015": "^6.5.0",
+    "babel-register": "^6.5.2",
+    "rimraf": "^2.5.2"
+  },
+  "dependencies": {
+    "coffea": "^1.0.0-beta11",
+    "debug-dude": "^1.0.3"
+  }
+}
