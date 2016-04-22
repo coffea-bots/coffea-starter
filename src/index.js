@@ -1,21 +1,31 @@
-const BOT_NAME = 'bot'
-
 import dude from 'debug-dude'
-const { /*debug,*/ log, info /*, warn, error*/ } = dude(BOT_NAME)
+const { /*debug,*/ log, info /*, warn, error*/ } = dude('bot')
 
 import { version } from '../package.json'
-info(`${BOT_NAME} v${version} starting`)
+info(`coffea-starter bot v${version} starting`)
 
 import config from '../config.json'
 
-import { connect } from 'coffea'
+import { connect, message } from 'coffea'
 const networks = connect(config)
 
 // --
 
-networks.on('message', (msg, reply) => {
-  log('Received message:', msg)
-  reply(`I'm a parrot: ${msg}`)
+networks.on('message', (evt, reply) => {
+  log('Received message event: %o', evt)
+
+  // TODO: do something with messages here or remove the message event handler
 })
 
-// TODO: write code here
+networks.on('command', (evt, reply) => {
+  log('Received command event: %o', evt)
+
+  switch (evt.cmd) {
+    case 'say':
+      reply(message(evt.channel, evt.args.join(' ')))
+      break
+    // TODO: add more commands here
+  }
+})
+
+// TODO: write more code here or adjust code above
