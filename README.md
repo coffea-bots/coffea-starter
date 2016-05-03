@@ -7,7 +7,6 @@ _coffea starter kit / boilerplate to quickly develop a chat bot_
 
 ```
 git clone https://github.com/coffea-bots/coffea-starter PROJECT_NAME
-rm -rf PROJECT_NAME/.git
 ```
 
 
