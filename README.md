@@ -38,8 +38,7 @@ While this is running, you can create a `config.json`, which will be passed to
 e.g. `npm install coffea-telegram coffea-slack` (in this case)
 
 Feel free to add as few or as many networks/protocols as you'd like. Currently,
-only [slack](https://github.com/caffeinery/coffea-slack) and [telegram](https://github.com/caffeinery/coffea-telegram) are supported. Support
-for [irc](https://github.com/caffeinery/coffea-irc) is work-in-progress.
+only [slack](https://github.com/caffeinery/coffea-slack), [telegram](https://github.com/caffeinery/coffea-telegram) and [irc](https://github.com/caffeinery/coffea-irc) are supported.
 
 Lastly, you should take a look at `src/index.js`. Feel free to adjust the code
 to your liking. As your bot grows, make sure to split it up into separate
