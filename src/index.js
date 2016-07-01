@@ -6,7 +6,7 @@ info(`coffea-starter bot v${version} starting`)
 
 import config from '../config.json'
 
-import { connect, message } from 'coffea'
+import { connect } from 'coffea'
 const networks = connect(config)
 
 // --
@@ -22,7 +22,7 @@ networks.on('command', (evt, reply) => {
 
   switch (evt.cmd) {
     case 'say':
-      reply(message(evt.channel, evt.args.join(' ')))
+      reply(evt.args.join(' '))
       break
     // TODO: add more commands here
   }
