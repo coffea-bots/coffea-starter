@@ -12,20 +12,20 @@ import mock from '../../coffea-mock/src/index'
 const networks = connect({
   protocol: mock,
   mock: {
-    message: (evt) => info('Message event received: %o', evt)
+    message: (evt) => info('message event received: %o', evt)
   }
 })
 
 // --
 
 networks.on('message', (evt, reply) => {
-  log('Received message event: %o', evt)
+  log('received message event: %o', evt)
 
   // TODO: do something with messages here or remove the message event handler
 })
 
 networks.on('command', (evt, reply) => {
-  log('Received command event: %o', evt)
+  log('received command event: %o', evt)
 
   switch (evt.cmd) {
     case 'say':
