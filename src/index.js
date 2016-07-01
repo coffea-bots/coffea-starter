@@ -9,7 +9,12 @@ import config from '../config.json'
 import { connect, message, command } from '../../coffea/src/index'
 // const networks = connect(config)
 import mock from '../../coffea-mock/src/index'
-const networks = connect({ protocol: mock })
+const networks = connect({
+  protocol: mock,
+  mock: {
+    message: (evt) => info('Message event received: %o', evt)
+  }
+})
 
 // --
 
