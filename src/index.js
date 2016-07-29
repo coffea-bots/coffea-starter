@@ -1,5 +1,5 @@
 import dude from 'debug-dude'
-const { /*debug,*/ log, info /*, warn, error*/ } = dude('bot')
+const { /*debug,*/ log, info, warn /*, error*/ } = dude('bot')
 
 import { version } from '../package.json'
 info(`coffea-starter bot v${version} starting`)
@@ -10,6 +10,14 @@ import { connect } from 'coffea'
 const networks = connect(config)
 
 // --
+
+networks.on('connection', ({ network, ...options }) =>
+  info('connected to %s network: %o', network, options)
+)
+
+networks.on('error', ({ err }) =>
+  warn('network error: %o', err)
+)
 
 networks.on('message', (evt, reply) => {
   log('Received message event: %o', evt)
